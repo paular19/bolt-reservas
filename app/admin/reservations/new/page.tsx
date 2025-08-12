@@ -1,42 +1,49 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Textarea } from '@/components/ui/textarea';
-import { UNITS } from '@/lib/constants';
-import { UnitType } from '@/lib/types';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
+import { UNITS } from "@/lib/constants";
+import { UnitType } from "@/lib/types";
 
 export default function NewReservationPage() {
   const router = useRouter();
-  
+
   const [formData, setFormData] = useState({
-    unit: '' as UnitType | '',
+    unit: "" as UnitType | "",
     persons: 1,
-    startDate: '',
-    endDate: '',
-    contactName: '',
-    contactLastName: '',
-    contactEmail: '',
-    contactPhone: '',
+    startDate: "",
+    endDate: "",
+    contactName: "",
+    contactLastName: "",
+    contactEmail: "",
+    contactPhone: "",
     includeBreakfast: false,
     includeLunch: false,
-    reason: '',
+    reason: "",
     notifyUser: true,
   });
 
+  // Posible refactor con Server Actions en el futuro
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
-      const response = await fetch('/api/admin/reservations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/admin/reservations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
           startDate: new Date(formData.startDate),
@@ -45,18 +52,22 @@ export default function NewReservationPage() {
       });
 
       if (response.ok) {
-        router.push('/admin');
+        router.push("/admin");
       } else {
-        alert('Error al crear la reserva');
+        alert("Error al crear la reserva");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error al crear la reserva');
+      console.error("Error:", error);
+      alert("Error al crear la reserva");
     }
   };
 
-  const canSubmit = formData.unit && formData.startDate && formData.endDate && 
-                   formData.contactName && formData.contactLastName;
+  const canSubmit =
+    formData.unit &&
+    formData.startDate &&
+    formData.endDate &&
+    formData.contactName &&
+    formData.contactLastName;
 
   return (
     <div className="min-h-screen bg-background">
@@ -78,7 +89,12 @@ export default function NewReservationPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label>Unidad *</Label>
-                    <Select value={formData.unit} onValueChange={(value) => setFormData({ ...formData, unit: value as UnitType })}>
+                    <Select
+                      value={formData.unit}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, unit: value as UnitType })
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Seleccione una unidad" />
                       </SelectTrigger>
@@ -94,19 +110,23 @@ export default function NewReservationPage() {
 
                   <div className="space-y-2">
                     <Label>Personas *</Label>
-                    <Select 
-                      value={formData.persons.toString()} 
-                      onValueChange={(value) => setFormData({ ...formData, persons: parseInt(value) })}
+                    <Select
+                      value={formData.persons.toString()}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, persons: parseInt(value) })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-                          <SelectItem key={num} value={num.toString()}>
-                            {num}
-                          </SelectItem>
-                        ))}
+                        {Array.from({ length: 20 }, (_, i) => i + 1).map(
+                          (num) => (
+                            <SelectItem key={num} value={num.toString()}>
+                              {num}
+                            </SelectItem>
+                          )
+                        )}
                       </SelectContent>
                     </Select>
                   </div>
@@ -116,7 +136,9 @@ export default function NewReservationPage() {
                     <Input
                       type="date"
                       value={formData.startDate}
-                      onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, startDate: e.target.value })
+                      }
                     />
                   </div>
 
@@ -125,7 +147,9 @@ export default function NewReservationPage() {
                     <Input
                       type="date"
                       value={formData.endDate}
-                      onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, endDate: e.target.value })
+                      }
                     />
                   </div>
                 </div>
@@ -134,7 +158,9 @@ export default function NewReservationPage() {
                   <Label>Motivo (Opcional)</Label>
                   <Textarea
                     value={formData.reason}
-                    onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, reason: e.target.value })
+                    }
                     placeholder="Motivo del bloqueo o reserva especial"
                   />
                 </div>
@@ -151,15 +177,25 @@ export default function NewReservationPage() {
                     <Label>Nombre *</Label>
                     <Input
                       value={formData.contactName}
-                      onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          contactName: e.target.value,
+                        })
+                      }
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label>Apellido *</Label>
                     <Input
                       value={formData.contactLastName}
-                      onChange={(e) => setFormData({ ...formData, contactLastName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          contactLastName: e.target.value,
+                        })
+                      }
                     />
                   </div>
 
@@ -168,7 +204,12 @@ export default function NewReservationPage() {
                     <Input
                       type="email"
                       value={formData.contactEmail}
-                      onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          contactEmail: e.target.value,
+                        })
+                      }
                     />
                   </div>
 
@@ -176,7 +217,12 @@ export default function NewReservationPage() {
                     <Label>Teléfono</Label>
                     <Input
                       value={formData.contactPhone}
-                      onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          contactPhone: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -186,8 +232,11 @@ export default function NewReservationPage() {
                     <Checkbox
                       id="includeBreakfast"
                       checked={formData.includeBreakfast}
-                      onCheckedChange={(checked) => 
-                        setFormData({ ...formData, includeBreakfast: checked as boolean })
+                      onCheckedChange={(checked) =>
+                        setFormData({
+                          ...formData,
+                          includeBreakfast: checked as boolean,
+                        })
                       }
                     />
                     <Label htmlFor="includeBreakfast">Incluir Desayuno</Label>
@@ -197,8 +246,11 @@ export default function NewReservationPage() {
                     <Checkbox
                       id="includeLunch"
                       checked={formData.includeLunch}
-                      onCheckedChange={(checked) => 
-                        setFormData({ ...formData, includeLunch: checked as boolean })
+                      onCheckedChange={(checked) =>
+                        setFormData({
+                          ...formData,
+                          includeLunch: checked as boolean,
+                        })
                       }
                     />
                     <Label htmlFor="includeLunch">Incluir Almuerzo</Label>
@@ -208,11 +260,16 @@ export default function NewReservationPage() {
                     <Checkbox
                       id="notifyUser"
                       checked={formData.notifyUser}
-                      onCheckedChange={(checked) => 
-                        setFormData({ ...formData, notifyUser: checked as boolean })
+                      onCheckedChange={(checked) =>
+                        setFormData({
+                          ...formData,
+                          notifyUser: checked as boolean,
+                        })
                       }
                     />
-                    <Label htmlFor="notifyUser">Notificar al usuario por email</Label>
+                    <Label htmlFor="notifyUser">
+                      Notificar al usuario por email
+                    </Label>
                   </div>
                 </div>
               </CardContent>

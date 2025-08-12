@@ -1,7 +1,7 @@
-import { UnitType, AvailabilityDate } from './types';
-import { UNITS } from './constants';
-import { getReservationsInDateRange } from './firebase/reservation-server';
-import { eachDayOfInterval, isSameDay } from 'date-fns';
+import { UnitType, AvailabilityDate } from "./types";
+import { UNITS } from "./constants";
+import { getReservationsInDateRange } from "./firebase/reservation-server";
+import { eachDayOfInterval, isSameDay } from "date-fns";
 
 export async function getAvailabilityForUnit(
   unit: UnitType,
@@ -10,9 +10,9 @@ export async function getAvailabilityForUnit(
 ): Promise<AvailabilityDate[]> {
   const reservations = await getReservationsInDateRange(startDate, endDate);
   const dates = eachDayOfInterval({ start: startDate, end: endDate });
-  
-  const availabilityDates: AvailabilityDate[] = dates.map(date => {
-    const conflictingReservations = reservations.filter(reservation => {
+
+  const availabilityDates: AvailabilityDate[] = dates.map((date) => {
+    const conflictingReservations = reservations.filter((reservation) => {
       return (
         date >= reservation.startDate &&
         date <= reservation.endDate &&
@@ -20,7 +20,11 @@ export async function getAvailabilityForUnit(
       );
     });
 
-    const occupiedCapacity = calculateOccupiedCapacity(unit, conflictingReservations, date);
+    const occupiedCapacity = calculateOccupiedCapacity(
+      unit,
+      conflictingReservations,
+      date
+    );
     const totalCapacity = UNITS[unit].capacity;
     const remainingCapacity = totalCapacity - occupiedCapacity;
 
@@ -39,8 +43,16 @@ function isUnitConflict(unit1: UnitType, unit2: UnitType): boolean {
   if (unit1 === unit2) return true;
 
   // Cabaña conflicts with both habitaciones
-  if (unit1 === 'cabana' && (unit2 === 'habitacion1' || unit2 === 'habitacion2')) return true;
-  if (unit2 === 'cabana' && (unit1 === 'habitacion1' || unit1 === 'habitacion2')) return true;
+  if (
+    unit1 === "cabana" &&
+    (unit2 === "habitacion1" || unit2 === "habitacion2")
+  )
+    return true;
+  if (
+    unit2 === "cabana" &&
+    (unit1 === "habitacion1" || unit1 === "habitacion2")
+  )
+    return true;
 
   // Habitaciones conflict with cabaña (already covered above)
   return false;
@@ -68,15 +80,17 @@ export async function checkAvailability(
   startDate: Date,
   endDate: Date
 ): Promise<boolean> {
+  console.log(startDate);
+  console.log(endDate);
   const availability = await getAvailabilityForUnit(unit, startDate, endDate);
-  
+
   // Check if all dates in the range are available
-  return availability.every(dateAvailability => {
+  return availability.every((dateAvailability) => {
     if (!UNITS[unit].isIndividual) {
       // For cabana/habitaciones, just check availability
       return dateAvailability.available;
     }
-    
+
     // For refugio/camping, check if there's enough capacity
     return dateAvailability.remainingCapacity >= persons;
   });

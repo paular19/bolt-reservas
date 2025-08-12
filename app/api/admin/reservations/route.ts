@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { createReservation } from '@/lib/firebase/reservation-server';
-import { sendBookingConfirmation } from '@/lib/email';
-import { checkAvailability } from '@/lib/availability';
+import { NextRequest, NextResponse } from "next/server";
+import { createReservation } from "@/lib/firebase/reservation-server";
+import { sendBookingConfirmation } from "@/lib/email";
+import { checkAvailability } from "@/lib/availability";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     if (!isAvailable) {
       return NextResponse.json(
-        { error: 'Las fechas seleccionadas no están disponibles' },
+        { error: "Las fechas seleccionadas no están disponibles" },
         { status: 400 }
       );
     }
@@ -25,8 +25,8 @@ export async function POST(request: NextRequest) {
     // Create reservation
     const reservationId = await createReservation({
       ...data,
-      origin: 'admin',
-      status: 'confirmed',
+      origin: "admin",
+      status: "confirmed",
     });
 
     // Send email notification if requested
@@ -36,9 +36,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ id: reservationId });
   } catch (error) {
-    console.error('Error creating admin reservation:', error);
+    console.error("Error creating admin reservation:", error);
     return NextResponse.json(
-      { error: 'Error interno del servidor' },
+      { error: "Error interno del servidor" },
       { status: 500 }
     );
   }

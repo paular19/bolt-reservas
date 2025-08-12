@@ -1,6 +1,6 @@
-import { redirect } from 'next/navigation';
-import { getReservations } from '@/lib/firebase/reservations';
-import ReservationsList from '@/components/Admin/ReservationsList';
+import { redirect } from "next/navigation";
+import { getReservations } from "@/lib/firebase/reservation-server";
+import ReservationsList from "@/components/Admin/ReservationsList";
 
 interface AdminPageProps {
   searchParams: {
@@ -18,16 +18,16 @@ async function checkAdminAuth() {
 
 export default async function AdminPage({ searchParams }: AdminPageProps) {
   const isAuthorized = await checkAdminAuth();
-  
+
   if (!isAuthorized) {
-    redirect('/admin/login');
+    redirect("/admin/login");
   }
 
-  const includeHistory = searchParams.history === 'true';
-  const page = parseInt(searchParams.page || '1');
-  const limit = parseInt(searchParams.limit || '20');
+  const includeHistory = searchParams?.history === "true" || false;
+  const page = parseInt(searchParams?.page || "1");
+  const limit = parseInt(searchParams?.limit || "20");
 
-  const { reservations, lastDoc } = await getReservations({
+  const { reservations, lastDocId } = await getReservations({
     includeHistory,
     pageSize: limit,
   });
@@ -40,7 +40,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
             <h1 className="text-3xl font-bold">Panel de Administración</h1>
           </div>
 
-          <ReservationsList 
+          <ReservationsList
             initialReservations={reservations}
             includeHistory={includeHistory}
             currentPage={page}
