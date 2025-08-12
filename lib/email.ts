@@ -1,9 +1,9 @@
-import { Resend } from 'resend';
+//import { Resend } from 'resend';
 import { BookingData } from './types';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+//const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendBookingConfirmation(
   bookingData: BookingData,
@@ -52,20 +52,20 @@ export async function sendBookingConfirmation(
     </ul>
   `;
 
-  await Promise.all([
-    // Email to customer
-    resend.emails.send({
-      from: 'noreply@refugio.com',
-      to: [bookingData.contactEmail],
-      subject: 'Confirmación de Reserva - Refugio de Montaña',
-      html: customerEmailHtml,
-    }),
-    // Email to admin
-    resend.emails.send({
-      from: 'noreply@refugio.com',
-      to: [process.env.ADMIN_EMAIL!],
-      subject: `Nueva Reserva - ${bookingData.contactName} ${bookingData.contactLastName}`,
-      html: adminEmailHtml,
-    }),
-  ]);
+  // await Promise.all([
+  //   // Email to customer
+  //   resend.emails.send({
+  //     from: 'noreply@refugio.com',
+  //     to: [bookingData.contactEmail],
+  //     subject: 'Confirmación de Reserva - Refugio de Montaña',
+  //     html: customerEmailHtml,
+  //   }),
+  //   // Email to admin
+  //   resend.emails.send({
+  //     from: 'noreply@refugio.com',
+  //     to: [process.env.ADMIN_EMAIL!],
+  //     subject: `Nueva Reserva - ${bookingData.contactName} ${bookingData.contactLastName}`,
+  //     html: adminEmailHtml,
+  //   }),
+  // ]);
 }

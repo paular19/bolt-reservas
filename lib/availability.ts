@@ -1,6 +1,6 @@
 import { UnitType, AvailabilityDate } from './types';
 import { UNITS } from './constants';
-import { getReservationsInDateRange } from './firebase/reservations';
+import { getReservationsInDateRange } from './firebase/reservation-server';
 import { eachDayOfInterval, isSameDay } from 'date-fns';
 
 export async function getAvailabilityForUnit(

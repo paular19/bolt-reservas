@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createReservation } from '@/lib/firebase/reservations';
+import { createReservation } from '@/lib/firebase/reservation-server';
 import { sendBookingConfirmation } from '@/lib/email';
 import { checkAvailability } from '@/lib/availability';
 
@@ -30,9 +30,9 @@ export async function POST(request: NextRequest) {
     });
 
     // Send email notification if requested
-    if (data.notifyUser && data.contactEmail) {
-      await sendBookingConfirmation(data, reservationId);
-    }
+    // if (data.notifyUser && data.contactEmail) {
+    //   await sendBookingConfirmation(data, reservationId);
+    // }
 
     return NextResponse.json({ id: reservationId });
   } catch (error) {

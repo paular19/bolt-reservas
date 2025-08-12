@@ -22,7 +22,6 @@ const COLLECTION_NAME = 'reservations';
 export async function createReservation(reservation: Omit<Reservation, 'id' | 'createdAt' | 'updatedAt'>): Promise<string> {
   const reservationData = {
     ...reservation,
-    id: nanoid(),
     createdAt: Timestamp.fromDate(new Date()),
     updatedAt: Timestamp.fromDate(new Date()),
     startDate: Timestamp.fromDate(reservation.startDate),
@@ -30,7 +29,7 @@ export async function createReservation(reservation: Omit<Reservation, 'id' | 'c
   };
 
   const docRef = await addDoc(collection(db, COLLECTION_NAME), reservationData);
-  return reservationData.id;
+  return docRef.id;
 }
 
 export async function updateReservation(id: string, data: Partial<Reservation>): Promise<void> {
