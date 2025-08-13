@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getReservations } from "@/lib/firebase/reservation-server";
 import ReservationsList from "@/components/Admin/ReservationsList";
+import Filters from "@/components/Admin/Filters";
 
 interface AdminPageProps {
   searchParams: {
@@ -15,7 +16,7 @@ async function checkAdminAuth() {
   // TODO: Implement Firebase Auth check for admin user
   return true;
 }
-
+export const dynamic = "force-dynamic";
 export default async function AdminPage({ searchParams }: AdminPageProps) {
   const isAuthorized = await checkAdminAuth();
 
@@ -23,10 +24,12 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
     redirect("/admin/login");
   }
 
-  const includeHistory = searchParams?.history === "true" || false;
-  const page = parseInt(searchParams?.page || "1");
-  const limit = parseInt(searchParams?.limit || "20");
+  // TODO: move this into getReservations
+  // this should be the pattern in SSR but we have also a hook for client.
+  const includeHistory = (await searchParams)?.history === "true" || false;
+  const limit = parseInt((await searchParams)?.limit || "20");
 
+  console.log("en admin", includeHistory, limit);
   const { reservations, lastDocId } = await getReservations({
     includeHistory,
     pageSize: limit,
@@ -39,13 +42,8 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold">Panel de Administración</h1>
           </div>
-
-          <ReservationsList
-            initialReservations={reservations}
-            includeHistory={includeHistory}
-            currentPage={page}
-            limit={limit}
-          />
+          <Filters searchParams={searchParams} />
+          <ReservationsList reservations={reservations} />
         </div>
       </div>
     </div>

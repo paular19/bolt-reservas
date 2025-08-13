@@ -62,7 +62,6 @@ export async function getReservations(options: {
   lastDocId?: string; // Aquí recibimos el id del último doc para paginar
 }): Promise<{ reservations: Reservation[]; lastDocId?: string }> {
   const { includeHistory = false, pageSize = 20, lastDocId } = options;
-
   let queryRef: FirebaseFirestore.Query = admin
     .firestore()
     .collection(COLLECTION_NAME);
@@ -96,10 +95,10 @@ export async function getReservations(options: {
     return {
       id: doc.id,
       ...data,
-      startDate: data.startDate.toDate(),
-      endDate: data.endDate.toDate(),
-      createdAt: data.createdAt.toDate(),
-      updatedAt: data.updatedAt.toDate(),
+      startDate: new Date(data.startDate),
+      endDate: new Date(data.endDate),
+      createdAt: new Date(data.createdAt),
+      updatedAt: new Date(data.updatedAt),
     } as Reservation;
   });
 
