@@ -1,0 +1,26 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "location": "southamerica-east1",
+    "rules": "y",
+    "indexes": "y"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

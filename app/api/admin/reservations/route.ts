@@ -8,12 +8,13 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
 
     // Check availability
-    const isAvailable = await checkAvailability(
-      data.unit,
-      data.persons,
-      data.startDate,
-      data.endDate
-    );
+    // const isAvailable = await checkAvailability(
+    //   data.unit,
+    //   data.persons,
+    //   data.startDate,
+    //   data.endDate
+    // );
+    const isAvailable = true;
 
     if (!isAvailable) {
       return NextResponse.json(

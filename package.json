@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "emulators": "npx kill-port 8080 4040 && firebase emulators:start --import ./firebase-export --export-on-exit ./firebase-export"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",

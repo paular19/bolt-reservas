@@ -65,13 +65,13 @@ export async function getReservations(options: {
 
   let queryRef: FirebaseFirestore.Query = admin
     .firestore()
-    .collection(COLLECTION_NAME)
-    .orderBy("startDate", "desc");
+    .collection(COLLECTION_NAME);
 
   if (!includeHistory) {
     const today = admin.firestore.Timestamp.now();
     queryRef = queryRef.where("endDate", ">=", today);
   }
+  queryRef = queryRef.orderBy("endDate", "desc");
 
   if (lastDocId) {
     // Obtener documento del lastDocId para startAfter
