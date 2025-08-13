@@ -140,7 +140,9 @@ export default async function NewReservationPage() {
                 </div>
               </CardContent>
             </Card>
-            <Button type="submit">Dale</Button>
+            <div className="flex fle-row justify-end">
+              <Button type="submit">Crear</Button>
+            </div>
           </form>
         </div>
       </div>

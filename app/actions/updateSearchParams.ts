@@ -1,8 +1,9 @@
-// app/actions/updateSearchParams.ts
 "use server";
 
 import { redirect } from "next/navigation";
 
+// this function updates a query param, sets in the url and redirects the route to it.
+// for example, ?limit=10
 export async function updateSearchParamsAction(
   currentParams: string,
   updates: Record<string, string>,
