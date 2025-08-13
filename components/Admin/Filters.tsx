@@ -27,42 +27,35 @@ export default function Filters({ searchParams }: any): any {
 
   return (
     <div className="flex flex-row space-between items-center justify-between">
-      <Card>
-        <CardHeader>
-          <CardTitle>Filtros</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="history"
-                checked={includeHistory}
-                onCheckedChange={handleHistoryToggle}
-              />
-              <label htmlFor="history">Incluir historial</label>
-            </div>
+      <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2">
+          <Checkbox
+            id="history"
+            checked={includeHistory}
+            onCheckedChange={handleHistoryToggle}
+          />
+          <label htmlFor="history">Incluir historial</label>
+        </div>
 
-            <div className="flex items-center space-x-2">
-              <span>Reservas por página:</span>
-              <Select
-                value={limit.toString()}
-                onValueChange={handleLimitChange}
-              >
-                <SelectTrigger className="w-20">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">10</SelectItem>
-                  <SelectItem value="20">20</SelectItem>
-                  <SelectItem value="50">50</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+        <div className="flex items-center space-x-2">
+          <span>Reservas por página:</span>
+          <Select value={limit.toString()} onValueChange={handleLimitChange}>
+            <SelectTrigger className="w-20">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="10">10</SelectItem>
+              <SelectItem value="20">20</SelectItem>
+              <SelectItem value="50">50</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
       <div className="flex justify-end btn">
-        <Link href={"/admin/reservations/new"}>Nueva Reserva</Link>
+        <Link href={"/admin/reservations/new"}>
+          <Button>Nueva Reserva</Button>
+        </Link>
       </div>
     </div>
   );

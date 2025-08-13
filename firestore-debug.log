@@ -1,4 +1,4 @@
-Aug 13, 2025 2:21:41 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+Aug 13, 2025 7:27:18 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
 INFO: Started WebSocket server on ws://127.0.0.1:9150
 API endpoint: http://127.0.0.1:8080
 If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
@@ -7,1362 +7,139 @@ If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment
 
 Dev App Server is now running.
 
-Aug 13, 2025 2:23:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 2:23:13 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:23:13 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+Aug 13, 2025 7:27:29 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Aug 13, 2025 7:27:29 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Aug 13, 2025 7:27:30 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Aug 13, 2025 7:28:11 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
 INFO: Connected to new websocket client
-Aug 13, 2025 2:23:14 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:23:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:28:30 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:23:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 2:23:17 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:23:41 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:23:43 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:23:47 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:25:43 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:25:45 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:25:50 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:26:06 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: Cannot have inequality filters on multiple properties
-com.google.cloud.datastore.core.exception.ValidationException: Cannot have inequality filters on multiple properties
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.rep.IndexRangeSetBuilder.addPostfix(IndexRangeSetBuilder.java:135)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.extractQueryPlans(FirestoreEmulatorQueryPlanner.java:540)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.planQuery(FirestoreEmulatorQueryPlanner.java:299)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQueryInternal(FirestoreEmulatorQuerySemantics.java:87)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:49)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:26:08 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: Cannot have inequality filters on multiple properties
-com.google.cloud.datastore.core.exception.ValidationException: Cannot have inequality filters on multiple properties
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.rep.IndexRangeSetBuilder.addPostfix(IndexRangeSetBuilder.java:135)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.extractQueryPlans(FirestoreEmulatorQueryPlanner.java:540)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.planQuery(FirestoreEmulatorQueryPlanner.java:299)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQueryInternal(FirestoreEmulatorQuerySemantics.java:87)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:49)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:26:12 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: Cannot have inequality filters on multiple properties
-com.google.cloud.datastore.core.exception.ValidationException: Cannot have inequality filters on multiple properties
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.rep.IndexRangeSetBuilder.addPostfix(IndexRangeSetBuilder.java:135)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.extractQueryPlans(FirestoreEmulatorQueryPlanner.java:540)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.planQuery(FirestoreEmulatorQueryPlanner.java:299)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQueryInternal(FirestoreEmulatorQuerySemantics.java:87)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:49)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:27 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:29 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:34 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:38 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:41 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:42 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:45 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:45 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:50 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:54 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:27:57 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:28:01 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:15 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:18 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:20 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:22 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:22 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:29:26 P.M. com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
-INFO: operation failed: inequality filter property and first sort order must be the same: endDate and startDate
-com.google.cloud.datastore.core.exception.ValidationException: inequality filter property and first sort order must be the same: endDate and startDate
-	at com.google.cloud.datastore.core.exception.ValidationException.validateAssertion(ValidationException.java:48)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateOrderBys(FirestoreEmulatorQueryPlanner.java:198)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validateInternal(FirestoreEmulatorQueryPlanner.java:101)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQueryPlanner.validate(FirestoreEmulatorQueryPlanner.java:74)
-	at com.google.cloud.datastore.emulator.impl.queries.FirestoreEmulatorQuerySemantics.runQuery(FirestoreEmulatorQuerySemantics.java:45)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.performQueryOnRows(CloudFirestoreV1.java:1216)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.snapshotQuery(CloudFirestoreV1.java:1131)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.lambda$query$29(CloudFirestoreV1.java:1117)
-	at com.google.cloud.datastore.emulator.impl.transactions.EmulatorTransactionManager$ReadOnlyTransaction.fold(EmulatorTransactionManager.java:348)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.query(CloudFirestoreV1.java:1116)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.runQuery(CloudFirestoreV1.java:486)
-	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1Router.runQuery(CloudFirestoreV1Router.java:163)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.lambda$runQuery$10(FirestoreV1GrpcAdapter.java:176)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter.streaming(FirestoreV1GrpcAdapter.java:80)
-	at com.google.cloud.datastore.emulator.firestore.v1.FirestoreV1GrpcAdapter$1.runQuery(FirestoreV1GrpcAdapter.java:176)
-	at com.google.firestore.v1.FirestoreGrpc$MethodHandlers.invoke(FirestoreGrpc.java:1294)
-	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
-	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
-	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
-	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
-	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:355)
-	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:867)
-	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
-	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1589)
-
-Aug 13, 2025 2:35:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:32 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:38 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:50 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+Aug 13, 2025 7:29:20 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Aug 13, 2025 7:29:20 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
 INFO: Websocket client disconnected
-Aug 13, 2025 2:35:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:35:51 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
-INFO: Connected to new websocket client
-Aug 13, 2025 2:36:00 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
-INFO: Websocket client disconnected
-Aug 13, 2025 2:36:00 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:36:01 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
-INFO: Connected to new websocket client
-Aug 13, 2025 2:36:49 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
-INFO: Websocket client disconnected
-Aug 13, 2025 2:36:49 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:37:02 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
-INFO: Connected to new websocket client
-Aug 13, 2025 2:56:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:57:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:58:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 2:59:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:00:52 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
-INFO: Websocket client disconnected
-Aug 13, 2025 3:00:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:01:09 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
-INFO: Connected to new websocket client
-Aug 13, 2025 3:02:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:14:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:15:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:17:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:17:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:18:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:19:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:45 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:45 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:45 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:20:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:06 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:06 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:06 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:16 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:16 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:16 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:26 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:26 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:26 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:21:32 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 3:21:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:22:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:22:21 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:22:21 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+Aug 13, 2025 7:29:20 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
 INFO: channel closed
-Aug 13, 2025 3:22:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:23:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:24:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:29:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+Aug 13, 2025 7:30:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:25:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:31:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:26:50 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:32:20 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:27:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:33:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:28:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:34:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:29:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:35:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:30:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:36:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:31:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:37:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:33:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:37:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+Aug 13, 2025 7:38:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:34:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:39:36 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:35:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:40:05 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:36:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:40:05 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:37:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:40:05 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:38:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:39:08 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:40:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:41:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:42:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:43:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:44:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:45:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:46:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:46:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:47:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:48:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:49:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:50:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:51:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:52:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:53:56 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 3:55:06 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+Aug 13, 2025 7:40:05 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
 INFO: Websocket client disconnected
-Aug 13, 2025 3:55:06 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:04:00 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+Aug 13, 2025 7:41:13 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
 INFO: Connected to new websocket client
-Aug 13, 2025 4:04:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:05:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:06:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:07:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:08:09 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:12 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:09:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:10:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:15 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:10:23 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 4:11:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:51 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:12:02 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
-INFO: Websocket client disconnected
-Aug 13, 2025 4:12:02 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:45:51 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:12:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:46:15 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:12:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:47:15 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:12:52 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+Aug 13, 2025 7:47:35 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Aug 13, 2025 7:47:35 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
 INFO: channel closed
-Aug 13, 2025 4:12:52 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:47:35 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:13:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:47:35 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:13:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:48:18 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:13:58 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+Aug 13, 2025 7:48:18 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Aug 13, 2025 7:48:18 P.M. com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
 INFO: channel closed
-Aug 13, 2025 4:13:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:48:18 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:14:22 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
-INFO: Connected to new websocket client
-Aug 13, 2025 4:14:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:49:33 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:15:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:50:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:16:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:51:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:17:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:52:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:18:48 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 4:18:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:53:24 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:19:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:54:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:20:58 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:55:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:21:19 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected HTTP/2 connection.
-Aug 13, 2025 4:21:59 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:56:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:22:59 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:57:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:23:59 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:58:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:25:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 7:59:10 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:26:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:00:25 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:27:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:01:25 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:28:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:02:25 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:29:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:03:25 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:30:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:04:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:31:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:32:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:33:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:34:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:35:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
-INFO: Detected non-HTTP/2 connection.
-Aug 13, 2025 4:36:14 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Aug 13, 2025 8:05:13 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.

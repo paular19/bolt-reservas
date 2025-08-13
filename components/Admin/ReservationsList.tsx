@@ -1,16 +1,18 @@
-"use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Reservation } from "@/lib/types";
 import { UNITS } from "@/lib/constants";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { useFilter } from "@/hooks/use-searchParams";
+import Link from "next/link";
+import LoadMore from "./LoadMore";
 
 interface ReservationsListProps {
   reservations: Reservation[];
@@ -19,113 +21,94 @@ interface ReservationsListProps {
 export default function ReservationsList({
   reservations,
 }: ReservationsListProps) {
-  const router = useRouter();
-
   const getStatusBadge = (status: string) => {
     const variants = {
       confirmed: "default",
       pending: "secondary",
       cancelled: "destructive",
-    } as any;
-    return <Badge variant={variants[status] as any}>{status}</Badge>;
+    } as const;
+    return <Badge variant={variants[status] || "secondary"}>{status}</Badge>;
   };
-
-  const { limit, page, updateSearchParams } = useFilter();
 
   return (
     <div className="space-y-6">
-      {/* Reservations List */}
-      <div className="space-y-4">
-        {reservations.length === 0 ? (
-          <Card>
-            <CardContent className="text-center py-8">
-              <p className="text-muted-foreground">
-                No hay reservas que mostrar
-              </p>
-            </CardContent>
-          </Card>
-        ) : (
-          reservations.map((reservation) => (
-            <Card key={reservation.id}>
-              <CardContent className="py-4">
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center">
-                  <div>
+      {reservations.length === 0 ? (
+        <div className="text-center py-8 text-muted-foreground">
+          No hay reservas que mostrar
+        </div>
+      ) : (
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Contacto</TableHead>
+                <TableHead>Unidad</TableHead>
+                <TableHead>Personas</TableHead>
+                <TableHead>Fechas</TableHead>
+                <TableHead>Estado</TableHead>
+                <TableHead>Origen</TableHead>
+                <TableHead>Acciones</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {reservations.map((reservation) => (
+                <TableRow key={reservation.id}>
+                  <TableCell>
                     <p className="font-medium">
                       {reservation.contactName} {reservation.contactLastName}
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {reservation.contactEmail}
                     </p>
-                  </div>
-
-                  <div>
+                  </TableCell>
+                  <TableCell>
                     <p className="font-medium">
                       {UNITS[reservation.unit]?.name}
                     </p>
+                  </TableCell>
+                  <TableCell>
                     <p className="text-sm text-muted-foreground">
                       {reservation.persons} personas
                     </p>
-                  </div>
-
-                  <div>
+                  </TableCell>
+                  <TableCell>
                     <p className="text-sm">
-                      {format(reservation.startDate, "dd/MM/yyyy", {
+                      {format(Date(reservation.startDate), "dd/MM/yyyy", {
                         locale: es,
                       })}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {format(reservation.endDate, "dd/MM/yyyy", {
+                      {format(Date(reservation.endDate), "dd/MM/yyyy", {
                         locale: es,
                       })}
                     </p>
-                  </div>
-
-                  <div>{getStatusBadge(reservation.status)}</div>
-
-                  <div>
+                  </TableCell>
+                  <TableCell>{getStatusBadge(reservation.status)}</TableCell>
+                  <TableCell>
                     <Badge variant="outline">{reservation.origin}</Badge>
-                  </div>
-
-                  <div className="flex space-x-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() =>
-                        router.push(`/admin/reservations/${reservation.id}`)
-                      }
+                  </TableCell>
+                  <TableCell className="flex gap-2">
+                    <Link
+                      href={`/admin/reservations/${reservation.id}`}
+                      className="text-blue-600 hover:underline"
                     >
                       Ver
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() =>
-                        router.push(
-                          `/admin/reservations/${reservation.id}/edit`
-                        )
-                      }
+                    </Link>
+                    <Link
+                      href={`/admin/reservations/${reservation.id}/edit`}
+                      className="text-blue-600 hover:underline"
                     >
                       Editar
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))
-        )}
-      </div>
-
-      {/* Pagination */}
-      {reservations.length === limit && (
-        <div className="flex justify-center">
-          <Button
-            variant="outline"
-            onClick={() => updateSearchParams({ page: (page + 1).toString() })}
-          >
-            Cargar más
-          </Button>
+                    </Link>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       )}
+
+      <LoadMore listLength={reservations.length} />
     </div>
   );
 }

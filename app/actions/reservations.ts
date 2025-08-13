@@ -1,39 +1,56 @@
-import { Reservation } from "../types";
+"use server";
 
-import { db, auth, default as admin } from "./config";
+import { Reservation } from "@/lib/types";
+import { db, default as admin } from "@/lib/firebase/config";
 
 const COLLECTION_NAME = "reservations";
 
-export async function createReservation(
-  reservation: Omit<Reservation, "id" | "createdAt" | "updatedAt">
+// Create
+import { redirect } from "next/navigation";
+
+export async function createReservationAction(
+  reservation: FormData
 ): Promise<string> {
+  console.log(reservation);
   const now = admin.firestore.Timestamp.now();
 
-  // TODO:
-  // fix  this hack. This is because we expect a date but sometimes is a timestamp string, from client.
-  // const startDate =
-  //   reservation.startDate instanceof Date
-  //     ? reservation.startDate
-  //     : new Date(reservation.startDate);
+  const startDateValue = reservation.get("startDate");
+  const endDateValue = reservation.get("endDate");
 
-  // const endDate =
-  //   reservation.endDate instanceof Date
-  //     ? reservation.endDate
-  //     : new Date(reservation.endDate);
+  if (!startDateValue || !endDateValue) {
+    throw new Error("Start date and end date are required.");
+  }
 
   const reservationData = {
-    ...reservation,
+    // You may want to map fields explicitly instead of spreading FormData
     createdAt: now,
     updatedAt: now,
-    startDate: admin.firestore.Timestamp.fromDate(reservation.startDate),
-    endDate: admin.firestore.Timestamp.fromDate(reservation.endDate),
+    startDate: admin.firestore.Timestamp.fromDate(
+      new Date(startDateValue as string)
+    ),
+    endDate: admin.firestore.Timestamp.fromDate(
+      new Date(endDateValue as string)
+    ),
+    contactName: reservation.get("contactName"),
+    contactLastName: reservation.get("contactLastName"),
+    contactEmail: reservation.get("contactEmail"),
+    contactPhone: reservation.get("contactPhone"),
+    unit: reservation.get("unit"),
+    persons: reservation.get("persons"),
+    reason: reservation.get("reason"),
+    includeBreakfast: reservation.get("includeBreakfast"),
+    includeLunch: reservation.get("includeLunch"),
+    notifyUser: reservation.get("notifyUser"),
+    // Add othe r fields from FormData as needed
   };
 
   const docRef = await db.collection(COLLECTION_NAME).add(reservationData);
-  return docRef.id;
+
+  redirect("/admin");
 }
 
-export async function updateReservation(
+// Update
+export async function updateReservationAction(
   id: string,
   data: Partial<Reservation>
 ): Promise<void> {
@@ -44,22 +61,27 @@ export async function updateReservation(
   };
 
   if (data.startDate)
-    updateData.startDate = admin.firestore.Timestamp.fromDate(data.startDate);
+    updateData.startDate = admin.firestore.Timestamp.fromDate(
+      new Date(data.startDate)
+    );
   if (data.endDate)
-    updateData.endDate = admin.firestore.Timestamp.fromDate(data.endDate);
+    updateData.endDate = admin.firestore.Timestamp.fromDate(
+      new Date(data.endDate)
+    );
 
   await docRef.update(updateData);
 }
 
-export async function deleteReservation(id: string): Promise<void> {
-  const docRef = db.collection(COLLECTION_NAME).doc(id);
-  await docRef.delete();
+// Delete
+export async function deleteReservationAction(id: string): Promise<void> {
+  await db.collection(COLLECTION_NAME).doc(id).delete();
 }
 
-export async function getReservations(options: {
+// Get paginated
+export async function getReservationsAction(options: {
   includeHistory?: boolean;
   pageSize?: number;
-  lastDocId?: string; // Aquí recibimos el id del último doc para paginar
+  lastDocId?: string;
 }): Promise<{ reservations: Reservation[]; lastDocId?: string }> {
   const { includeHistory = false, pageSize = 20, lastDocId } = options;
   let queryRef: FirebaseFirestore.Query = admin
@@ -73,32 +95,26 @@ export async function getReservations(options: {
   queryRef = queryRef.orderBy("endDate", "desc");
 
   if (lastDocId) {
-    // Obtener documento del lastDocId para startAfter
     const lastDocSnap = await admin
       .firestore()
       .collection(COLLECTION_NAME)
       .doc(lastDocId)
       .get();
-    if (lastDocSnap.exists) {
-      queryRef = queryRef.startAfter(lastDocSnap);
-    }
+    if (lastDocSnap.exists) queryRef = queryRef.startAfter(lastDocSnap);
   }
 
-  if (pageSize) {
-    queryRef = queryRef.limit(pageSize);
-  }
+  if (pageSize) queryRef = queryRef.limit(pageSize);
 
   const snapshot = await queryRef.get();
-
   const reservations = snapshot.docs.map((doc) => {
     const data = doc.data();
     return {
       id: doc.id,
       ...data,
-      startDate: data.startDate,
-      endDate: data.endDate,
-      createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      startDate: data.startDate.toDate(),
+      endDate: data.endDate.toDate(),
+      createdAt: data.createdAt.toDate(),
+      updatedAt: data.updatedAt.toDate(),
     } as Reservation;
   });
 
@@ -110,7 +126,8 @@ export async function getReservations(options: {
   return { reservations, lastDocId: lastDocIdResult };
 }
 
-export async function getReservationsInDateRange(
+// Get by date range
+export async function getReservationsInDateRangeAction(
   startDate: Date,
   endDate: Date
 ): Promise<Reservation[]> {
@@ -118,16 +135,12 @@ export async function getReservationsInDateRange(
     startDate instanceof Date ? startDate : new Date(startDate);
   const endTimestamp = endDate instanceof Date ? endDate : new Date(endDate);
 
-  // Firestore limita múltiples inequalities en la misma consulta, cuidado con filtros complejos
-  // Aquí un workaround sin filtro status != 'cancelled' porque admin.firestore no soporta '!=' directamente
-
   const snapshot = await db
     .collection(COLLECTION_NAME)
     .where("startDate", "<=", endTimestamp)
     .where("endDate", ">=", startTimestamp)
     .get();
 
-  // Filtrar cancelados en el backend (ya que no podemos hacer '!=' directo)
   const filtered = snapshot.docs.filter(
     (doc) => doc.data().status !== "cancelled"
   );

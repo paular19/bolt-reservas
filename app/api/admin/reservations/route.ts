@@ -6,7 +6,7 @@ import { checkAvailability } from "@/lib/availability";
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-
+    console.log(data);
     // Check availability
     // const isAvailable = await checkAvailability(
     //   data.unit,
