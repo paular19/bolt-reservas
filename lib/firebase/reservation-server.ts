@@ -11,22 +11,22 @@ export async function createReservation(
 
   // TODO:
   // fix  this hack. This is because we expect a date but sometimes is a timestamp string, from client.
-  const startDate =
-    reservation.startDate instanceof Date
-      ? reservation.startDate
-      : new Date(reservation.startDate);
+  // const startDate =
+  //   reservation.startDate instanceof Date
+  //     ? reservation.startDate
+  //     : new Date(reservation.startDate);
 
-  const endDate =
-    reservation.endDate instanceof Date
-      ? reservation.endDate
-      : new Date(reservation.endDate);
+  // const endDate =
+  //   reservation.endDate instanceof Date
+  //     ? reservation.endDate
+  //     : new Date(reservation.endDate);
 
   const reservationData = {
     ...reservation,
     createdAt: now,
     updatedAt: now,
-    startDate: admin.firestore.Timestamp.fromDate(startDate),
-    endDate: admin.firestore.Timestamp.fromDate(endDate),
+    startDate: admin.firestore.Timestamp.fromDate(reservation.startDate),
+    endDate: admin.firestore.Timestamp.fromDate(reservation.endDate),
   };
 
   const docRef = await db.collection(COLLECTION_NAME).add(reservationData);
@@ -62,7 +62,6 @@ export async function getReservations(options: {
   lastDocId?: string; // Aquí recibimos el id del último doc para paginar
 }): Promise<{ reservations: Reservation[]; lastDocId?: string }> {
   const { includeHistory = false, pageSize = 20, lastDocId } = options;
-
   let queryRef: FirebaseFirestore.Query = admin
     .firestore()
     .collection(COLLECTION_NAME);
@@ -96,10 +95,10 @@ export async function getReservations(options: {
     return {
       id: doc.id,
       ...data,
-      startDate: data.startDate.toDate(),
-      endDate: data.endDate.toDate(),
-      createdAt: data.createdAt.toDate(),
-      updatedAt: data.updatedAt.toDate(),
+      startDate: data.startDate,
+      endDate: data.endDate,
+      createdAt: data.createdAt,
+      updatedAt: data.updatedAt,
     } as Reservation;
   });
 

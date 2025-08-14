@@ -1,4 +1,10 @@
-export type UnitType = 'refugio' | 'camping' | 'cabana' | 'habitacion1' | 'habitacion2';
+export type UnitType =
+  | "refugio"
+  | "camping"
+  | "cabana"
+  | "habitacion1"
+  | "habitacion2";
+import { Timestamp } from "firebase-admin/firestore";
 
 export interface ReservationUnit {
   type: UnitType;
@@ -24,16 +30,16 @@ export interface Reservation {
   id: string;
   unit: UnitType;
   persons: number;
-  startDate: Date;
-  endDate: Date;
+  startDate: Timestamp;
+  endDate: Timestamp;
   contactName: string;
   contactLastName: string;
   contactEmail: string;
   contactPhone: string;
   includeBreakfast: boolean;
   includeLunch: boolean;
-  origin: 'web' | 'admin';
-  status: 'pending' | 'confirmed' | 'cancelled';
+  origin: "web" | "admin";
+  status: "pending" | "confirmed" | "cancelled";
   paymentId?: string;
   reason?: string; // For admin bookings/blocks
   createdAt: Date;
