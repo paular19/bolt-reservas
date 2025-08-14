@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getReservations } from "@/lib/firebase/reservation-server";
-import ReservationsList from "@/components/Admin/ReservationsList";
+import Reservations from "@/components/Admin/Reservations";
 import Filters from "@/components/Admin/Filters";
 
 interface AdminPageProps {
@@ -43,7 +43,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
             <h1 className="text-3xl font-bold">Panel de Administración</h1>
           </div>
           <Filters searchParams={searchParams} />
-          <ReservationsList reservations={reservations} />
+          <Reservations reservations={reservations} />
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { UNITS } from "@/lib/constants";
+import { UNITS, RESERVATION_STATUS } from "@/lib/constants";
 
 export default async function NewReservationPage() {
   return (
@@ -76,14 +76,34 @@ export default async function NewReservationPage() {
                     <Label>Fecha de Salida *</Label>
                     <Input type="date" name="endDate" required />
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label>Motivo (Opcional)</Label>
-                  <Textarea
-                    name="reason"
-                    placeholder="Motivo del bloqueo o reserva especial"
-                  />
+                  <div className="space-y-2">
+                    <Label>Motivo (Opcional)</Label>
+                    <Textarea
+                      name="reason"
+                      placeholder="Motivo del bloqueo o reserva especial"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Origen</Label>
+                    <Input name="origin" value={"manual"} />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Estado</Label>
+                    <Select name="persons" defaultValue={RESERVATION_STATUS[1]}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {RESERVATION_STATUS.map((status) => (
+                          <SelectItem key={status} value={status}>
+                            {status}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
               </CardContent>
             </Card>
