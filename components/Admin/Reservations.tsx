@@ -9,25 +9,34 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Reservation } from "@/lib/types";
 import { UNITS } from "@/lib/constants";
-import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Link from "next/link";
 import LoadMore from "./LoadMore";
+import { format } from "date-fns";
 
-interface ReservationsListProps {
+interface ReservationsProps {
   reservations: Reservation[];
 }
 
-export default function ReservationsList({
-  reservations,
-}: ReservationsListProps) {
+export default function Reservations({ reservations }: ReservationsProps) {
+  // given a status of a reservation return a Badge component with the color variant for that status
   const getStatusBadge = (status: string) => {
-    const variants = {
-      confirmed: "default",
-      pending: "secondary",
-      cancelled: "destructive",
-    } as const;
-    return <Badge variant={variants[status] || "secondary"}>{status}</Badge>;
+    let variant: "default" | "secondary" | "destructive";
+
+    switch (status) {
+      case "confirmed":
+        variant = "default";
+        break;
+      case "pending":
+        variant = "secondary";
+        break;
+      case "cancelled":
+        variant = "destructive";
+        break;
+      default:
+        variant = "secondary";
+    }
+    return <Badge variant={variant}>{status}</Badge>;
   };
 
   return (
@@ -73,12 +82,12 @@ export default function ReservationsList({
                   </TableCell>
                   <TableCell>
                     <p className="text-sm">
-                      {format(Date(reservation.startDate), "dd/MM/yyyy", {
+                      {format(reservation.startDate.toDate(), "dd/MM/yyyy", {
                         locale: es,
                       })}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {format(Date(reservation.endDate), "dd/MM/yyyy", {
+                      {format(reservation.endDate.toDate(), "dd/MM/yyyy", {
                         locale: es,
                       })}
                     </p>

@@ -1,4 +1,3 @@
-import { useRouter } from "next/navigation";
 import { createReservationAction } from "../../../actions/reservations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

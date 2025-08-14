@@ -10,26 +10,28 @@ import { redirect } from "next/navigation";
 
 export async function createReservationAction(
   reservation: FormData
-): Promise<string> {
+): Promise<void> {
   console.log(reservation);
   const now = admin.firestore.Timestamp.now();
 
-  const startDateValue = reservation.get("startDate");
-  const endDateValue = reservation.get("endDate");
+  // convert dates from FormData, from DatePicker, into dates and then Firestore.Timestamps
+  const startDateTime = reservation.get("startDate") + "T00:00:00Z";
+  const endDateTime = reservation.get("endDate") + "T00:00:00Z";
 
-  if (!startDateValue || !endDateValue) {
+  if (!startDateTime || !endDateTime) {
     throw new Error("Start date and end date are required.");
   }
 
+  // Preparing the object to insert in the collection.
+  // Dates should be firestore.Timestamp so then we ca read easily
   const reservationData = {
-    // You may want to map fields explicitly instead of spreading FormData
     createdAt: now,
     updatedAt: now,
     startDate: admin.firestore.Timestamp.fromDate(
-      new Date(startDateValue as string)
+      new Date(startDateTime as string)
     ),
     endDate: admin.firestore.Timestamp.fromDate(
-      new Date(endDateValue as string)
+      new Date(endDateTime as string)
     ),
     contactName: reservation.get("contactName"),
     contactLastName: reservation.get("contactLastName"),
@@ -44,8 +46,7 @@ export async function createReservationAction(
     // Add othe r fields from FormData as needed
   };
 
-  const docRef = await db.collection(COLLECTION_NAME).add(reservationData);
-
+  await db.collection(COLLECTION_NAME).add(reservationData);
   redirect("/admin");
 }
 
@@ -62,11 +63,11 @@ export async function updateReservationAction(
 
   if (data.startDate)
     updateData.startDate = admin.firestore.Timestamp.fromDate(
-      new Date(data.startDate)
+      data.startDate.toDate()
     );
   if (data.endDate)
     updateData.endDate = admin.firestore.Timestamp.fromDate(
-      new Date(data.endDate)
+      data.endDate.toDate()
     );
 
   await docRef.update(updateData);
